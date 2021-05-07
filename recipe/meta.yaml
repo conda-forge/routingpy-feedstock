@@ -1,5 +1,5 @@
 {% set name = "routingpy" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/routingpy-{{ version }}.tar.gz
-  sha256: 53959dc4b3de398f3c4f9523240a2506fd16a047a33224e1e059fa617dbb10eb
+  sha256: 297425fccf8911aa19e73ae245c5cb6464f4674eeceb9f699891bcb5f9d1d089
 
 build:
   number: 0
