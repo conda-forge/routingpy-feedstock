@@ -1,5 +1,5 @@
 {% set name = "routingpy" %}
-{% set version = "0.3.3" %}
+{% set version = "1.3.0" %}
 
 
 package:
@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/routingpy-{{ version }}.tar.gz
-  sha256: 297425fccf8911aa19e73ae245c5cb6464f4674eeceb9f699891bcb5f9d1d089
+  url: https://github.com/nilsnolde/routingpy/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 80126dc6c2d41cbd435380f0abca7a19a91ef5d04bdc3fc07e85f211a2a3fc2d
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,15 +19,19 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - poetry >=0.12
+    - setuptools >=45
+    - setuptools_scm >=6.2
+
   run:
     - python >={{ python_min }}
-    - requests >=2.0.0,<3.0.0
+    - requests >=2.2.0,<3.0.0
   run_constrained:
-    - pandas >=1.1.0,<2
-    - folium >=0.11.0,<1
-    - shapely >=1.7.0,<2
-    - ipykernel >=5.3.4,<6
+    - shapely >=2.0.0,<3
+    - ipykernel >=6.0.0,<7
+    - matplotlib-base >=3.4.1,<4
+    - contextily >=1.1.0,<2
+    - geopandas >=0.8.2,<0.9.0
+    - descartes >=1.0.0,<2
 
 test:
   imports:
@@ -48,3 +52,4 @@ about:
 extra:
   recipe-maintainers:
     - ickc
+    - synapticarbors
