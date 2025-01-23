@@ -7,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/routingpy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/routingpy-{{ version }}.tar.gz
   sha256: 297425fccf8911aa19e73ae245c5cb6464f4674eeceb9f699891bcb5f9d1d089
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - poetry >=0.12
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - requests >=2.0.0,<3.0.0
   run_constrained:
     - pandas >=1.1.0,<2
@@ -37,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/routingpy/
