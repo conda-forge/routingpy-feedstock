@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@ickc](https://github.com/ickc/)
+* [@synapticarbors](https://github.com/synapticarbors/)
 
