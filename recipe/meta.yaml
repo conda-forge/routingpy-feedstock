@@ -7,13 +7,16 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/nilsnolde/routingpy/archive/refs/tags/{{ version }}.tar.gz
+  url: https://github.com/routingpy/routingpy/archive/refs/tags/{{ version }}.tar.gz
   sha256: 80126dc6c2d41cbd435380f0abca7a19a91ef5d04bdc3fc07e85f211a2a3fc2d
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script:
+    # GitHub tarballs lack the git metadata setuptools-scm needs
+    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
