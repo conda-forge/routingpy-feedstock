@@ -189,5 +189,6 @@ Feedstock Maintainers
 =====================
 
 * [@ickc](https://github.com/ickc/)
+* [@knaaptime](https://github.com/knaaptime/)
 * [@synapticarbors](https://github.com/synapticarbors/)
 
