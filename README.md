@@ -9,6 +9,8 @@ Package license: Apache-2.0
 
 Summary: Python library to access all public routing, isochrones and matrix APIs in a consistent manner.
 
+Development: https://github.com/routingpy/routingpy
+
 Current build status
 ====================
 
